@@ -5,6 +5,7 @@
     xmlns:local="using:TAFEBuddy_SRV_Prototype.views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d">
 
     <Page.BottomAppBar>
@@ -46,8 +47,20 @@
                         Width="100" />
             </StackPanel>
 
-            <!--Progress Bar-->
-            <Image x:Name="progressbarImg" Source="ms-appx:///Images/progressbar.png" Height="150" />
+            <StackPanel>
+                <Canvas Width="130" Height="130">
+                    <controls:RadialProgressBar x:Name="RadialProgressBarControl"
+	                    Value="75" Minimum="0" Maximum="100"
+	                    Thickness="35" Outline="White" Foreground="#ac2d36" Width="130" Height="130">
+                    </controls:RadialProgressBar>
+                    <Image x:Name="progressBarInsert" Source="ms-appx:///Images/pbCentre.png" 
+                           Height="90" Width="90"
+                           Canvas.Left="20" Canvas.Top="20"/>
+                    <TextBlock Text="75%" Foreground="White" FontSize="30px" FontFamily="Arial" Width="130" Height="32" TextAlignment="Center" Canvas.Top="48"/>
+                </Canvas>
+            </StackPanel>
+            
+
 
             <!--Student Details-->
             <StackPanel>
